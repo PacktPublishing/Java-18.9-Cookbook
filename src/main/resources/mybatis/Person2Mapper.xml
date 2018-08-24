@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mybatis.Person2Mapper">
+    <insert id="insertPerson" parameterType="Person" keyProperty="id" keyColumn="id">
+        insert into Person2 (age, name, family_id) values(#{age}, #{name}, #{family.id})
+    </insert>
+    <select id="selectPersonsCount" resultType="int">
+        select count(*) from Person2
+    </select>
+</mapper>
